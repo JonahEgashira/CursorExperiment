@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExperimentController : MonoBehaviour
+public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 {
-    // Start is called before the first frame update
+    
+    private int frontBallState = 0;
     void Start()
     {
         
@@ -13,6 +14,15 @@ public class ExperimentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+    
+    public void Test()
+    {
+        Debug.Log("Singleton!");
+    }
+
+    public void IncrementFrontBallState()
+    {
+        frontBallState += 1;
     }
 }
