@@ -6,14 +6,20 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 {
     
     private int frontBallState = 0;
+    public GameObject frontBall;
+    public GameObject rightBall;
+    public GameObject leftBall;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (frontBall.transform.position.y >= 1.3)
+        {
+            frontBall.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
     }
     
     public void Test()
