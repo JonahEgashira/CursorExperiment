@@ -2,19 +2,19 @@
 
 public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour{
 
-    private static T instance;
+    private static T _instance;
     public static T Instance
     {
         get{
-            if (instance != null) return instance;
+            if (_instance != null) return _instance;
             var t = typeof(T);
 
-            instance = (T)FindObjectOfType (t);
-            if (instance == null) {
+            _instance = (T)FindObjectOfType (t);
+            if (_instance == null) {
                 Debug.LogError (t + " is not attached to any GameObject");
             }
 
-            return instance;
+            return _instance;
         }
     }
 
@@ -23,8 +23,8 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBe
     }
 
     private bool CheckInstance(){
-        if (instance == null) {
-            instance = this as T;
+        if (_instance == null) {
+            _instance = this as T;
             return true;
         }
 
