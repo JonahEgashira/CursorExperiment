@@ -7,9 +7,10 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private int _cubeState;
     private const int NumberOfCubeState = 4;
     public GameObject prefabCube;
+    public GameObject RightHand;
 
     private const double Degree = 30.0;
-    private const double HypotenuseLength = 0.2;
+    private const double HypotenuseLength = 0.3;
     private const float BaseX = 0.0f;
     private const float BaseY = 1.125f;
     private const float BaseZ = 0.1f;
@@ -29,13 +30,20 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         _frontCubePos = new Vector3(BaseX, BaseY, BaseZ);
         _rightCubePos = new Vector3(BaseX + (float)_xLength, BaseY, BaseZ + (float)_zLength);
         _leftCubePos = new Vector3(BaseX + (float)(-_xLength), BaseY, BaseZ + (float)_zLength);
+        
+        ShiftRightHand();
+    }
+
+    private void ShiftRightHand()
+    {
+        RightHand.transform.position += transform.up * 0.1f;
     }
 
     public void UpdateCubeState()
     {
         _cubeState += 1;
         _cubeState %= NumberOfCubeState;
-        GenerateCube();
+        Invoke(nameof(GenerateCube), 0.2f);
         Debug.Log("cubeState: " + _cubeState);
     }
 
