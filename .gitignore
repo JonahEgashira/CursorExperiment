@@ -13,6 +13,8 @@
 /[Aa]ssets/TextMesh Pro/
 /[Aa]ssets/XR/
 
+/CursorExperiment_BackUpThisFolder_ButDontShipItWithYourGame/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
