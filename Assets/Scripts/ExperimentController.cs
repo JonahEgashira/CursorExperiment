@@ -6,6 +6,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     
     private int _cubeState;
     private int _touchedCount;
+    private const int MaxTouchedCount = 120;
     private const int NumberOfCubeState = 4;
     public GameObject prefabCube;
     public GameObject rightHandAnchor;
@@ -42,7 +43,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private void ShiftRightHand()
     {
-        var turn = _touchedCount / NumberOfCubeState;
+        var turn = Math.Min(_touchedCount, 120) / NumberOfCubeState;
         var angle = turn * ShiftAngle;
 
         var zDistance = rightHand.transform.position.z - BaseZ;
