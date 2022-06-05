@@ -41,7 +41,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private void GenerateCube()
     {
-        var ballPos = _cubeState switch
+        var cubePos = _cubeState switch
         {
             0 => _frontCubePos,
             1 => _rightCubePos,
@@ -49,6 +49,6 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
             3 => _leftCubePos,
             _ => _frontCubePos,
         };
-        Instantiate(prefabCube, ballPos, Quaternion.identity);
+        Instantiate(prefabCube, cubePos, Quaternion.identity);
     }
 }
