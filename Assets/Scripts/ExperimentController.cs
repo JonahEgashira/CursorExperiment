@@ -114,6 +114,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     }
 
     // TODO: Log index finger's position instead of rightHandAnchor
+    // TODO: And make cube smaller
     private void PushRightHandPosition()
     {
         var actualPosition = rightHandAnchor.transform.position;
