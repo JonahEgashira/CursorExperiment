@@ -113,6 +113,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         Instantiate(prefabCube, cubePos, Quaternion.identity);
     }
 
+    // TODO: Log index finger's position instead of rightHandAnchor
     private void PushRightHandPosition()
     {
         var actualPosition = rightHandAnchor.transform.position;
