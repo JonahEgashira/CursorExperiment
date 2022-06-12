@@ -864,6 +864,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 11434164, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477634, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11477634, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
       propertyPath: m_parentHeldObject
       value: 1
@@ -886,6 +894,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13646088, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95024934887329368, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -927,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636203317140566630, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5636203317140566630, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_TagString
@@ -1152,15 +1164,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792253896738436974, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7792253896738436974, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7792253896738436974, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7792253896738436974, guid: 602aeed0c85339f49accb7372bdc7d37, type: 3}
       propertyPath: m_LocalPosition.x

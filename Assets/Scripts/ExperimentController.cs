@@ -9,20 +9,23 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private int _cubeState;
     private int _touchedCount;
     private int _frameCount;
-    private const int MaxTouchedCount = 120;
     private const int NumberOfCubeState = 4;
     
     public GameObject prefabCube;
+    public GameObject rightIndexFingerAnchor;
     public GameObject rightHandAnchor;
     public GameObject rightHand;
 
-    private const double Degree = 30.0;
-    private const double MaxAngle = Math.PI * 30.0 / 180.0;
-    private const double ShiftAngle = Math.PI * 0.5 / 180.0;
-    private const double HypotenuseLength = 0.2;
+    private const double CubeDegree = 30.0;
+    private const double ShiftDegree = 0.5;
+    private const double HypotenuseLength = 0.1;
     private const float CubeBaseX = 0.0f;
     private const float CubeBaseY = 1.125f;
     private const float CubeBaseZ = 0.10f;
+    
+    private double _maxAngle;
+    private double _shiftAngle;
+    private int _maxTouchedCount;
     
     private float _forceFieldBaseZ;
     
@@ -41,8 +44,13 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         _cubeState = 0;
         _touchedCount = 0;
         _frameCount = 0;
-        
-        _angle = Math.PI * Degree / 180.0;
+
+        _maxAngle = Math.PI * CubeDegree / 180.0;
+        _angle = Math.PI * CubeDegree / 180.0;
+        _shiftAngle = Math.PI * ShiftDegree / 180.0;
+
+        _maxTouchedCount = (int)(CubeDegree / ShiftDegree) * NumberOfCubeState;
+
         _xLength = HypotenuseLength * Math.Sin(_angle);
         _zLength = HypotenuseLength * Math.Cos(_angle);
         _frontCubePos = new Vector3(CubeBaseX, CubeBaseY, CubeBaseZ);
@@ -55,12 +63,12 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         ShiftRightHand();
         _frameCount++;
 
-        if (_frameCount % 5 == 0)
+        if (_frameCount % 2 == 0)
         {
-            PushRightHandPosition();
+            PushRightIndexFingerPosition();
         }
 
-        if (_touchedCount == MaxTouchedCount)
+        if (_touchedCount == _maxTouchedCount)
         {
             StoreResultsInPC();
             StoreResultsInDevice();
@@ -70,7 +78,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private void ShiftRightHand()
     {
         var turn = _touchedCount / NumberOfCubeState;
-        var angle = Math.Min(turn * ShiftAngle, MaxAngle);
+        var angle = Math.Min(turn * _shiftAngle, _maxAngle);
 
         var actualPosition = rightHandAnchor.transform.position;
         var virtualPosition = rightHand.transform.position;
@@ -88,6 +96,11 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     public void UpdateCubeAndFieldState()
     {
+        if (_touchedCount > _maxTouchedCount)
+        {
+            return;
+        }
+        
         if (_cubeState is 0 or 2)
         {
             var position = rightHandAnchor.transform.position;
@@ -115,9 +128,9 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         Instantiate(prefabCube, cubePos, Quaternion.identity);
     }
 
-    private void PushRightHandPosition()
+    private void PushRightIndexFingerPosition()
     {
-        var actualPosition = rightHandAnchor.transform.position;
+        var actualPosition = rightIndexFingerAnchor.transform.position;
         _actualRightHandPositions.Add(_cubeState + "," + actualPosition.x + "," + actualPosition.y + "," + actualPosition.z);
     }
 
