@@ -4,7 +4,7 @@ using UnityEngine;
 public class TouchObjectScript : MonoBehaviour
 {
     private const float LimitTime = 0.2f;
-    private float _currentTime = 0.0f;
+    private float _currentTime;
 
     private void OnTriggerEnter(Collider other)
     {
