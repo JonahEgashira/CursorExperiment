@@ -31501,24 +31501,30 @@ struct ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12  : public 
 	int32_t ____cubeState_5;
 	// System.Int32 ExperimentController::_touchedCount
 	int32_t ____touchedCount_6;
+	// System.Int32 ExperimentController::_frameCount
+	int32_t ____frameCount_7;
 	// UnityEngine.GameObject ExperimentController::prefabCube
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___prefabCube_8;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___prefabCube_10;
 	// UnityEngine.GameObject ExperimentController::rightHandAnchor
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHandAnchor_9;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHandAnchor_11;
 	// UnityEngine.GameObject ExperimentController::rightHand
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHand_10;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHand_12;
+	// System.Single ExperimentController::_forceFieldBaseZ
+	float ____forceFieldBaseZ_20;
 	// System.Double ExperimentController::_angle
-	double ____angle_17;
+	double ____angle_21;
 	// System.Double ExperimentController::_xLength
-	double ____xLength_18;
+	double ____xLength_22;
 	// System.Double ExperimentController::_zLength
-	double ____zLength_19;
+	double ____zLength_23;
 	// UnityEngine.Vector3 ExperimentController::_frontCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____frontCubePos_20;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____frontCubePos_24;
 	// UnityEngine.Vector3 ExperimentController::_rightCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____rightCubePos_21;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____rightCubePos_25;
 	// UnityEngine.Vector3 ExperimentController::_leftCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____leftCubePos_22;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____leftCubePos_26;
+	// System.Collections.Generic.List`1<System.String> ExperimentController::_actualRightHandPositions
+	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ____actualRightHandPositions_27;
 };
 
 // Oculus.Interaction.Input.FromOVRControllerDataSource
@@ -39622,9 +39628,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5941[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5942[3] = 
 {
 	static_cast<int32_t>(offsetof(StartMenu_t75C686A394618522E32AD30C819F308E68E45818, ___overlay_4)),static_cast<int32_t>(offsetof(StartMenu_t75C686A394618522E32AD30C819F308E68E45818, ___text_5)),static_cast<int32_t>(offsetof(StartMenu_t75C686A394618522E32AD30C819F308E68E45818, ___vrRig_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5943[18] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5943[23] = 
 {
-	static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____cubeState_5)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____touchedCount_6)),0,static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___prefabCube_8)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___rightHandAnchor_9)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___rightHand_10)),0,0,0,0,0,0,static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____angle_17)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____xLength_18)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____zLength_19)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____frontCubePos_20)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____rightCubePos_21)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____leftCubePos_22)),};
+	static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____cubeState_5)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____touchedCount_6)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____frameCount_7)),0,0,static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___prefabCube_10)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___rightHandAnchor_11)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ___rightHand_12)),0,0,0,0,0,0,0,static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____forceFieldBaseZ_20)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____angle_21)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____xLength_22)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____zLength_23)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____frontCubePos_24)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____rightCubePos_25)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____leftCubePos_26)),static_cast<int32_t>(offsetof(ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12, ____actualRightHandPositions_27)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5944[1] = 
 {
 	0,};

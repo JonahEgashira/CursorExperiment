@@ -144,5 +144,4 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         var filePath = path + dateStr + ".csv";
         File.WriteAllLines(filePath, _actualRightHandPositions);
     }
-
 }
