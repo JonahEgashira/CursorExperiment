@@ -11,6 +11,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private int _frameCount;
     private const int MaxTouchedCount = 120;
     private const int NumberOfCubeState = 4;
+    
     public GameObject prefabCube;
     public GameObject rightHandAnchor;
     public GameObject rightHand;
@@ -18,7 +19,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private const double Degree = 30.0;
     private const double MaxAngle = Math.PI * 30.0 / 180.0;
     private const double ShiftAngle = Math.PI * 0.5 / 180.0;
-    private const double HypotenuseLength = 0.25;
+    private const double HypotenuseLength = 0.2;
     private const float CubeBaseX = 0.0f;
     private const float CubeBaseY = 1.125f;
     private const float CubeBaseZ = 0.10f;
@@ -61,7 +62,8 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
         if (_touchedCount == MaxTouchedCount)
         {
-            StoreResults();
+            StoreResultsInPC();
+            StoreResultsInDevice();
         }
     }
 
@@ -113,15 +115,13 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         Instantiate(prefabCube, cubePos, Quaternion.identity);
     }
 
-    // TODO: Log index finger's position instead of rightHandAnchor
-    // TODO: And make cube smaller
     private void PushRightHandPosition()
     {
         var actualPosition = rightHandAnchor.transform.position;
         _actualRightHandPositions.Add(_cubeState + "," + actualPosition.x + "," + actualPosition.y + "," + actualPosition.z);
     }
 
-    private void StoreResults()
+    private void StoreResultsInPC()
     {
         var dateStr = DateTime.Now.ToString("MM_dd_HH_mm");
         var path = Application.dataPath + "/HandPositions/";
@@ -132,5 +132,17 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         var filePath = path + dateStr + ".csv";
         File.WriteAllLines(filePath, _actualRightHandPositions);
     }
-    
+
+    public void StoreResultsInDevice()
+    {
+        var dateStr = DateTime.Now.ToString("MM_dd_HH_mm");
+        var path = Application.persistentDataPath + "/HandPositions/";
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        var filePath = path + dateStr + ".csv";
+        File.WriteAllLines(filePath, _actualRightHandPositions);
+    }
+
 }
