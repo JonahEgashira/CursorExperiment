@@ -70,8 +70,8 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
         if (_touchedCount == _maxTouchedCount)
         {
-            StoreResultsInPC();
             StoreResultsInDevice();
+            StoreResultsInPC();
         }
     }
 

@@ -22306,6 +22306,8 @@ struct TouchController_t1BCC5F911D1E7987E5DA9A4654DD05D585C32A03  : public MonoB
 // TouchObjectScript
 struct TouchObjectScript_t2E073AD9DEEFF2AB43B3B88A2E2179197BF87E55  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+	// System.Single TouchObjectScript::_currentTime
+	float ____currentTime_5;
 };
 
 // OculusSampleFramework.TrackSegment
@@ -22939,27 +22941,35 @@ struct ExperimentController_t8E3D2C8D95954EBD611327B9D56D1376BDCA9B12  : public 
 	// System.Int32 ExperimentController::_frameCount
 	int32_t ____frameCount_7;
 	// UnityEngine.GameObject ExperimentController::prefabCube
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___prefabCube_10;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___prefabCube_9;
+	// UnityEngine.GameObject ExperimentController::rightIndexFingerAnchor
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightIndexFingerAnchor_10;
 	// UnityEngine.GameObject ExperimentController::rightHandAnchor
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHandAnchor_11;
 	// UnityEngine.GameObject ExperimentController::rightHand
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rightHand_12;
+	// System.Double ExperimentController::_maxAngle
+	double ____maxAngle_19;
+	// System.Double ExperimentController::_shiftAngle
+	double ____shiftAngle_20;
+	// System.Int32 ExperimentController::_maxTouchedCount
+	int32_t ____maxTouchedCount_21;
 	// System.Single ExperimentController::_forceFieldBaseZ
-	float ____forceFieldBaseZ_20;
+	float ____forceFieldBaseZ_22;
 	// System.Double ExperimentController::_angle
-	double ____angle_21;
+	double ____angle_23;
 	// System.Double ExperimentController::_xLength
-	double ____xLength_22;
+	double ____xLength_24;
 	// System.Double ExperimentController::_zLength
-	double ____zLength_23;
+	double ____zLength_25;
 	// UnityEngine.Vector3 ExperimentController::_frontCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____frontCubePos_24;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____frontCubePos_26;
 	// UnityEngine.Vector3 ExperimentController::_rightCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____rightCubePos_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____rightCubePos_27;
 	// UnityEngine.Vector3 ExperimentController::_leftCubePos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____leftCubePos_26;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____leftCubePos_28;
 	// System.Collections.Generic.List`1<System.String> ExperimentController::_actualRightHandPositions
-	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ____actualRightHandPositions_27;
+	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ____actualRightHandPositions_29;
 };
 
 // OculusSampleFramework.FingerTipPokeTool
