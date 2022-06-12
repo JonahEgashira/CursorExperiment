@@ -18,7 +18,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private const double CubeDegree = 30.0;
     private const double ShiftDegree = 0.5;
-    private const double HypotenuseLength = 0.1;
+    private const double HypotenuseLength = 0.2;
     private const float CubeBaseX = 0.0f;
     private const float CubeBaseY = 1.125f;
     private const float CubeBaseZ = 0.10f;
@@ -26,6 +26,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private double _maxAngle;
     private double _shiftAngle;
     private int _maxTouchedCount;
+    private const int AdditionalCount = 20;
     
     private float _forceFieldBaseZ;
     
@@ -49,7 +50,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
         _angle = Math.PI * CubeDegree / 180.0;
         _shiftAngle = Math.PI * ShiftDegree / 180.0;
 
-        _maxTouchedCount = (int)(CubeDegree / ShiftDegree) * NumberOfCubeState;
+        _maxTouchedCount = (int)(CubeDegree / ShiftDegree) * NumberOfCubeState + AdditionalCount;
 
         _xLength = HypotenuseLength * Math.Sin(_angle);
         _zLength = HypotenuseLength * Math.Cos(_angle);
