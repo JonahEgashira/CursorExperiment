@@ -18,7 +18,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private const double CubeDegree = 30.0;
     private const double ShiftDegree = 0.5;
-    private const double HypotenuseLength = 0.2;
+    private const double HypotenuseLength = 0.15;
     private const float CubeBaseX = 0.0f;
     private const float CubeBaseY = 1.125f;
     private const float CubeBaseZ = 0.10f;
