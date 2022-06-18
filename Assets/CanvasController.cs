@@ -37,5 +37,10 @@ public class CanvasController : MonoBehaviour
     {
         ExperimentController.Instance.AdditionalCount -= 1;
     }
+
+    public void ping()
+    {
+        Debug.Log("Ping");
+    }
     
 }
