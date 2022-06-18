@@ -8959,12 +8959,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExperimentController_Start_m6640BA311D89
 		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
 		double L_1;
 		L_1 = sin(L_0);
-		__this->____xLength_25 = ((double)il2cpp_codegen_multiply((0.20000000000000001), L_1));
+		__this->____xLength_25 = ((double)il2cpp_codegen_multiply((0.14999999999999999), L_1));
 		// _zLength = HypotenuseLength * Math.Cos(_angle);
 		double L_2 = __this->____angle_24;
 		double L_3;
 		L_3 = cos(L_2);
-		__this->____zLength_26 = ((double)il2cpp_codegen_multiply((0.20000000000000001), L_3));
+		__this->____zLength_26 = ((double)il2cpp_codegen_multiply((0.14999999999999999), L_3));
 		// _frontCubePos = new Vector3(CubeBaseX, CubeBaseY, CubeBaseZ);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		memset((&L_4), 0, sizeof(L_4));
