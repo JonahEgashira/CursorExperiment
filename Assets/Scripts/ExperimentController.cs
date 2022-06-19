@@ -19,7 +19,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private const double CubeDegree = 30.0;
     private const double ShiftDegree = 0.5;
-    public double hypotenuseLength = 0.15;
+    public double hypotenuseLength = 0.1;
     private const float CubeBaseX = 0.0f;
     private const float CubeBaseY = 1.125f;
     private const float CubeBaseZ = 0.10f;
@@ -28,6 +28,9 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
     private double _shiftAngle;
     private int _maxTouchedCount;
     public int AdditionalCount = 20;
+
+    public int middleCount = 20; // If middleCount is larger than 0, that means it is middle mode
+    public bool middleFieldOff;
     
     private float _forceFieldBaseZ;
     
@@ -83,6 +86,11 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private void ShiftRightHand()
     {
+        if (middleFieldOff && _touchedCount > _maxTouchedCount)
+        {
+            return;
+        }
+        
         var turn = _touchedCount / NumberOfCubeState;
         var angle = Math.Min(turn * _shiftAngle, _maxAngle);
 
@@ -102,7 +110,7 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     public void UpdateCubeAndFieldState()
     {
-        if (_touchedCount > _maxTouchedCount)
+        if (_touchedCount > _maxTouchedCount + middleCount)
         {
             return;
         }
@@ -123,6 +131,12 @@ public class ExperimentController : SingletonMonoBehaviour<ExperimentController>
 
     private void GenerateCube()
     {
+        if (_touchedCount > _maxTouchedCount)
+        {
+            _rightCubePos.x = _frontCubePos.x;
+            _leftCubePos.x = _frontCubePos.x;
+        }
+        
         var cubePos = _cubeState switch
         {
             0 => _frontCubePos,
