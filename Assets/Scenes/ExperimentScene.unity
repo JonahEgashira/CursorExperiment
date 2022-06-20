@@ -484,7 +484,7 @@ MonoBehaviour:
   rightIndexFingerAnchor: {fileID: 401906568}
   rightHandAnchor: {fileID: 787332276}
   rightHand: {fileID: 1248701115}
-  hypotenuseLength: 0.15
+  hypotenuseLength: 0.1
   AdditionalCount: 20
   middleCount: 20
   middleFieldOff: 0
